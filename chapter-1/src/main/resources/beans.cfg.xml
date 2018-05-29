@@ -7,7 +7,8 @@
         <constructor-arg ref="quest"/>
     </bean>
     <bean id="quest" class="edu.springinaction.chapter1.quests.SlayDragonQuest">
-        <!-- reference to PrintStream-->
+        <!-- reference to PrintStream added with
+            Spring Expression Language to pass System.out -->
         <constructor-arg ref="#{T(System).out}"/>
 
     </bean>
