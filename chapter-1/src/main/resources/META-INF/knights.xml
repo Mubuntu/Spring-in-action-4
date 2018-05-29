@@ -12,4 +12,6 @@
         <constructor-arg ref="#{T(System).out}"/>
 
     </bean>
+    <!-- application context: ClassPathXmlApplicationContext
+         java-based context: AnnotationConfigApplicationContext-->
 </beans>
