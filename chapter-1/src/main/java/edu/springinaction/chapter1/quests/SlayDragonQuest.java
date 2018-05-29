@@ -1,5 +1,7 @@
 package edu.springinaction.chapter1.quests;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.PrintStream;
 
 /**
@@ -11,7 +13,7 @@ import java.io.PrintStream;
 public class SlayDragonQuest implements Quest {
     private PrintStream stream;
 
-    // TODO: 29/05/2018 inject printStream into BraveKnight either use xml or annotations
+    // TODO: 29/05/2018 inject printStream into BraveKnight
     public SlayDragonQuest(PrintStream stream) {
         this.stream = stream;
     }

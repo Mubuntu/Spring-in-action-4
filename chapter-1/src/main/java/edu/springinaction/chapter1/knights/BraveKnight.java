@@ -19,5 +19,7 @@ public class BraveKnight implements Knight {
     @Override
     public void embarkOnQuest() {
         quest.embark();
+        // should a knight manage its own minstrel?
+//        minstrel.singBefore();
     }
 }

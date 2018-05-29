@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  * Date: 29/05/2018
  * Time: 02:33
- * <p>
  * java based configuration as alternative to XML
  **/
 @Configuration

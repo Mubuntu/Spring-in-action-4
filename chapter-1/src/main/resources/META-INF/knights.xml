@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <bean id="knight" class="edu.springinaction.chapter1.knights.BraveKnight">
         <!-- add reference to injected bean-->
         <constructor-arg ref="quest"/>
@@ -9,9 +9,24 @@
     <bean id="quest" class="edu.springinaction.chapter1.quests.SlayDragonQuest">
         <!-- reference to PrintStream added with
             Spring Expression Language to pass System.out -->
-        <constructor-arg ref="#{T(System).out}"/>
+            <constructor-arg ref="#{T (System).out}"/>
 
     </bean>
+    <bean id="minstrel" class="edu.springinaction.chapter1.knights.Minstrel">
+        <constructor-arg ref="#{T (System).out}"/>
+    </bean>
+    <aop:config>
+        <aop:aspect ref="minstrel">
+            <!--                                    ApectJ's pointcut expression language-->
+            <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/>
+            <!-- declare before advice -->
+            <aop:before pointcut-ref="embark"
+                        method="singBefore"/>
+
+            <!-- declare after advice-->
+            <aop:after pointcut-ref="embark" method="singAfter"/>
+        </aop:aspect>
+    </aop:config>
     <!-- application context: ClassPathXmlApplicationContext
          java-based context: AnnotationConfigApplicationContext-->
 </beans>

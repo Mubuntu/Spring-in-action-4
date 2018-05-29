@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>chapter-1</name>
-    <description>example project that I use to help with examples in spring in action 4</description>
+    <description>example project that I use to help with examples in spring in action 4 - chapter 1</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,6 +51,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--aspectJ dependency-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.6.8</version>
+        </dependency>
 
     </dependencies>
 
