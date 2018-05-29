@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="knight" class="edu.springinaction.chapter1.knights.BraveKnight">
+        <!-- add reference to injected bean-->
+        <constructor-arg ref="quest"/>
+    </bean>
+    <bean id="quest" class="edu.springinaction.chapter1.quests.SlayDragonQuest">
+        <!-- reference to PrintStream-->
+        <constructor-arg ref="#{T(System).out}"/>
+
+    </bean>
+</beans>
