@@ -2,6 +2,7 @@ package edu.springinaction.chapter2.soundsystem;
 
 import static org.junit.Assert.*;
 
+import edu.springinaction.chapter2.soundsystem.config.CDPlayerConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

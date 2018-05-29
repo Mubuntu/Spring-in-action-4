@@ -1,4 +1,4 @@
-package edu.springinaction.chapter2.soundsystem;
+package edu.springinaction.chapter2.soundsystem.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
  * Time: 00:28
  **/
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "edu.springinaction.chapter2.soundsystem")
 public class CDPlayerConfig {
 }
