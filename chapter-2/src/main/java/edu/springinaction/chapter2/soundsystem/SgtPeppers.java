@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Date: 30/05/2018
  * Time: 00:24
  **/
-@Component
+//@Component("sgtPeppers")
 public class SgtPeppers implements CompactDisc {
     private String title = "Sgt. Pepper's Lonely Hearts Club Band";
     private String artist = "The Beatles";

@@ -1,9 +1,10 @@
 package edu.springinaction.chapter2.soundsystem.config;
 
+import edu.springinaction.chapter2.soundsystem.CDPlayer;
 import edu.springinaction.chapter2.soundsystem.CompactDisc;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+
 
 /**
  * @author Patrick Frison
@@ -13,6 +14,20 @@ import org.springframework.stereotype.Component;
  **/
 @Configuration
 // will search base package based on classed given:
-@ComponentScan(basePackageClasses = CompactDisc.class)
+// now we have control over bean wiring:
+// @ComponentScan(basePackageClasses = CompactDisc.class)
 public class CDPlayerConfig {
+    @Bean
+    public CDPlayer cdPlayer(CompactDisc compactDisc) {
+        CDPlayer cdPlayer = new CDPlayer();
+        cdPlayer.insertDisc(compactDisc);
+        return cdPlayer;
+    }
+
+    // of:
+//    @Bean
+//    public MediaPlayer anotherCDPlayer(CompactDisc disc){
+//        return new CDPlayer(disc);
+//    }
+
 }
