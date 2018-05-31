@@ -1,9 +1,6 @@
 package edu.com.springinaction.chapter4.concert;
 
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 
 /**
  * @author Patrick Frison
@@ -13,20 +10,26 @@ import org.aspectj.lang.annotation.Before;
  **/
 @Aspect
 public class Audience  {
-    @Before("execution (* edu.com.springinaction.chapter4.concert.Performance.perform(..))")
+    // add named pointcut to reduce code duplication
+    @Pointcut("execution (* edu.com.springinaction.chapter4.concert.Performance.perform(..))")
+    public void performance(){
+
+    }
+
+    @Before("performance()")
     public void silenceCellPhones(){
         System.out.println("Silencing cell phones");
     }
 
-    @Before("execution(* edu.com.springinaction.chapter4.concert.Performance.perform(..))")
+    @Before("performance()")
     public void takeSeats() {
         System.out.println("Taking seats");
     }
-    @AfterReturning("execution(* edu.com.springinaction.chapter4.concert.Performance.perform(..))")
+    @AfterReturning("performance()")
     public void applause() {
         System.out.println("CLAP CLAP CLAP!!!");
     }
-    @AfterThrowing("execution(* edu.com.springinaction.chapter4.concert.Performance.perform(..))")
+    @AfterThrowing("performance()")
     public void demandRefund() {
         System.out.println("Demanding a refund");
     }
