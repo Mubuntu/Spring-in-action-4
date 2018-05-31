@@ -1,4 +1,4 @@
-package edu.com.springinaction.chapter4.concert;
+package edu.springinaction.chapter4.concert;
 
 /**
  * @author Patrick Frison

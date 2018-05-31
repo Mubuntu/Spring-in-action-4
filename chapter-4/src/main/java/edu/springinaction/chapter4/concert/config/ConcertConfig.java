@@ -1,7 +1,6 @@
-package edu.com.springinaction.chapter4.concert.config;
+package edu.springinaction.chapter4.concert.config;
 
-import edu.com.springinaction.chapter4.concert.Audience;
-import org.aspectj.lang.annotation.Before;
+import edu.springinaction.chapter4.concert.Audience;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,9 @@
-package edu.com.springinaction.chapter4.concert;
+package edu.springinaction.chapter4.concert;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * @author Patrick Frison
@@ -12,7 +14,7 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class Audience  {
     // add named pointcut to reduce code duplication
-    @Pointcut("execution (* edu.com.springinaction.chapter4.concert.Performance.perform(..))")
+    @Pointcut("execution (* edu.springinaction.chapter4.concert.Performance.perform(..))")
     public void performance(){
 
     }

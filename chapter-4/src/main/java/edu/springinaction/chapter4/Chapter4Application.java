@@ -1,4 +1,4 @@
-package edu.com.springinaction.chapter4;
+package edu.springinaction.chapter4;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
